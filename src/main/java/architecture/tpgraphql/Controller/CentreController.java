@@ -34,7 +34,8 @@ public class CentreController {
         return centreRepository.save(centre);
     }
 
-    @MutationMapping
+
+    @MutationMapping("updateCenter")
     public Centre modifyCentre(@Argument int id, @Argument String nom, @Argument String adresse) {
         Optional<Centre> centreOptional = centreRepository.findById(id);
         if (centreOptional.isPresent()) {
